@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1> THE EMOJI GAME</h1>
+    </header>
+
+    <div>
+       
+        <p id="userchoice-text"></p>
+        <p id="wins-text">wins: </p>
+        <p id="losses-text">losses: </p>
+        <p id="current-word">Current word</p>
+        <p> <span id="game"></span></h2>
+
+
+        <p id="remaining-guesses">number of guesses remaining</p>
+        <p id="old-letters">Letters already guessed</p>
+
+    </div>
+
+    <p id="demo"></p>
+
+<button onclick="myFunction()">Submit</button>
+
+     <script type="text/javascript">
+
+var wins = 0;
+var losses = 0;
+
+var game = ["grimacingface","goblin","ghost","kissingcat","poutingcat","seenoevilmonkey","purpleheart","wavinghand","oncomingfist","clappinghands","frowningface","personraisinghand","facepalming","manshrugging","spoutingwhale","octopus","evergreentree","cactus","peach","eggplant","japanesepostoffice","waninggibbousmoon"]
+var choice = Math.floor(Math.random()*22);
+var answer = game[choice];
+var myLength = answer.length;
+var display=[myLength];
+var win = myLength;
+var letters = answer.split('');
+var attemptsLeft= 10;
+var output="";
+var userLetter="";
+
+console.log(answer);
+console.log(myLength);
+
+var setup = function() {
+    for (var i=0; i< answer.length; i++){
+
+        display[i] = "_ ";
+        output = output + display[i];
+    }
+    document.getElementById("game").innerHTML = output;
+    output ="";
+}
+
+var submit = function() {
+
+    output = "";
+    userLetter=$("Letter").value;
+    $("letter").value ="";
+
+    for (var c= 0; c< answer.length; c++) {
+
+        alert(letter[C]);
+        if (userLetter.toUpperCase() == letters[c]) {
+            display[c] = userLetter.toUpperCase();
+            win--;
+        }
+            output = output + display[c] + " ";
+    }
+    document.getElementById("game").innerHTML = output;
+    output="";
+    attemptsLeft--;
+
+    if (win < 1)
+    {
+        document.getElementById("guesses").innerHTML = "You Win!"
+    }
+}
+              </script>
+          
+</body>
+</html>
